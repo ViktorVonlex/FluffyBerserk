@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+
+  db:
+    image: mysql:5.5
+    container_name: fluffy
+    environment:
+      MYSQL_ROOT_PASSWORD: ps
+      MYSQL_DATABASE: fluffy_berserk
+    ports:
+      - 3306:3306
+    volumes:
+      - ./fluffy_berserk.sql:/docker-entrypoint-initdb.d/init.sql
